@@ -261,7 +261,7 @@ const Home = (props: HomeProps) => {
           <MintCard data-aos="flip-left">
             <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1>
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            {/* <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
+            <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                 Mint Your Dream Girl
             </h1>
             <h1 className="font-semibold text-2xl mt-6 mb-4">
@@ -295,15 +295,15 @@ const Home = (props: HomeProps) => {
                           fontSize: "1.2rem",
                       }}
                       onCountChange={handleQuantityChange}
-                  /> */}
-            {/* <h1 className="font-normal text-sm my-2">
+                  />
+            <h1 className="font-normal text-sm my-2">
                 10 max per transaction
             </h1>
             <h2 className="font-bold text-2xl mt-6">
                 ~ {(quantity * basePrice)} SOL
-            </h2> */}
+            </h2> 
               
-            {/* <ConnectButton style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "2rem 0 0 0",padding: "0.5rem 2rem"}}>Mint</ConnectButton> */}
+            <ConnectButton style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "2rem 0 0 0",padding: "0.5rem 2rem"}}>Mint</ConnectButton>
             
           </MintCard>
           <div className="flex relative lg:p-24 p-12 pt-4 justify-center items-center overflow-hidden">

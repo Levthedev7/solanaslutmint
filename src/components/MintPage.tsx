@@ -161,7 +161,7 @@ const App = () => {
                         renderer={renderer}
                     />
                 </div>
-                {/* <ConnectButton className="" style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "1.2rem 0"}}>Connect Wallet</ConnectButton> */}
+                <ConnectButton className="" style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "1.2rem 0"}}>Connect Wallet</ConnectButton>
             </div>
             <div className="flex w-full justify-center items-center lg:hidden">
                 <Countdown
