@@ -19,6 +19,7 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
+import { useWallet } from '@solana/wallet-adapter-react';
 
 import { WalletDialogProvider } from "@solana/wallet-adapter-material-ui";
 import { createTheme, ThemeProvider } from "@material-ui/core";
@@ -96,17 +97,27 @@ const App = () => {
     ],
     []
   );
-  const [quantity, setQuantity] = useState(0);
-  const basePrice = 0.5;
+
+  const wallet = useWallet();
+ 
+  
+  const [address, setAddress] = useState<string>('')
 
   useEffect(() => {
       Aos.init({ duration: 1000 });
   }, []);
 
+//   useEffect(() => {
+//     (async () => {        
+//         if(wallet.publicKey)
+//             setAddress(wallet.publicKey?.toString())
+//     })();
+//   }, [wallet, connection]);
+
   
 
   const currentDate = new Date(new Date().toUTCString()).getTime();
-  const launchDate = new Date(Date.UTC(2022, 0, 23,22, 0, 0, 0)).getTime();
+  const launchDate = new Date(Date.UTC(2022, 1, 21,22, 0, 0, 0)).getTime();
 
   const Completionist = () => (
       <span style={{ color: "#2D2D2D", fontWeight: 700, fontSize: "1.5rem" }}>
@@ -161,7 +172,7 @@ const App = () => {
                         renderer={renderer}
                     />
                 </div>
-                <ConnectButton className="" style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "1.2rem 0"}}>Connect Wallet</ConnectButton>
+  <ConnectButton className="" style={{color: "#2d2d2d", backgroundColor:"white",border: "2px solid #2d2d2d", transition: "all 200ms ease-in-out",borderRadius : "30px", margin: "1.2rem 0"}}>Connect Wallet {address}</ConnectButton>
             </div>
             <div className="flex w-full justify-center items-center lg:hidden">
                 <Countdown
@@ -172,11 +183,9 @@ const App = () => {
             
               <Mint
                 candyMachineId={candyMachineId}
-                config={config}
                 connection={connection}
-                startDate={startDateSeed}
-                treasury={treasury}
                 txTimeout={txTimeout}
+                rpcHost={rpcHost}
               />
             </WalletDialogProvider>
           </WalletProvider>
