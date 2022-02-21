@@ -23,7 +23,6 @@ import {
 import { useWallet } from '@solana/wallet-adapter-react';
 import { toDate, formatNumber, getAtaForMint } from './utils';
 
-
 const MintCard = styled.div`
     ${tw`
         flex
@@ -78,9 +77,7 @@ const Home = (props: HomeProps) => {
 
   const [itemsAvailable, setItemsAvailable] = useState(0);
   const [itemsRedeemed, setItemsRedeemed] = useState(0);
-  // const [itemsRemaining, setItemsRemaining] = useState(0);
   const [discountPrice, setDiscountPrice] = useState<anchor.BN>();
-  // const [isActive, setIsActive] = useState(false);
   const [endDate, setEndDate] = useState<Date>();
   const [itemsRemaining, setItemsRemaining] = useState<number>();
   const [isWhitelistUser, setIsWhitelistUser] = useState(false);
@@ -88,10 +85,8 @@ const Home = (props: HomeProps) => {
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [dispAddress, setDispAddress] = useState('');
 
-  // const [startDate, setStartDate] = useState(new Date(props.startDate));
   const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 1, 21,22, 0, 0, 0)).getTime());
 
-  // const wallet = useAnchorWallet();
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
 
   const rpcUrl = props.rpcHost;
