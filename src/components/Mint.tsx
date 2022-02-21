@@ -449,7 +449,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              {/* {isActive && <MintButton
+              <MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -472,14 +472,14 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton>} */}
+              </MintButton>
 
-                  <Countdown
+                  {/* <Countdown
                     date={startDate}
                     onMount={({ completed }) => completed && setIsActive(true)}
                     onComplete={() => setIsActive(true)}
                     renderer={renderCounter}
-                  />
+                  /> */}
         
               <h2 className="font-semibold text-md mt-4 ">
               {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
