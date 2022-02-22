@@ -462,7 +462,7 @@ const Home = (props: HomeProps) => {
                   disabled={ isSoldOut || isMinting}
                   onClick={() => startMintMultiple(quantity)}
                   variant="contained"
-                > */}
+                >
                 {isSoldOut ? (
                   "SOLD OUT"
                   ) : (
@@ -472,7 +472,7 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton>
+              </MintButton> */}
 
                   {/* <Countdown
                     date={startDate}
