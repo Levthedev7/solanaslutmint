@@ -117,7 +117,7 @@ const App = () => {
   
 
   const currentDate = new Date(new Date().toUTCString()).getTime();
-  const launchDate = new Date(Date.UTC(2022, 1, 21,22, 0, 0, 0)).getTime();
+  const launchDate = new Date(Date.UTC(2022, 1, 26,22, 0, 0, 0)).getTime();
 
   const Completionist = () => (
       <span style={{ color: "#2D2D2D", fontWeight: 700, fontSize: "1.5rem" }}>

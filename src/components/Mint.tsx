@@ -343,7 +343,7 @@ const Home = (props: HomeProps) => {
           <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center min-h-screen">
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
             <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                 Mint Your Dream Pimp
             </h1>
@@ -407,7 +407,7 @@ const Home = (props: HomeProps) => {
          
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
               <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                   Mint Your Dream Pimp
               </h1>
@@ -449,7 +449,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              <MintButton
+              {/* <MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -462,7 +462,7 @@ const Home = (props: HomeProps) => {
                   disabled={ isSoldOut || isMinting}
                   onClick={() => startMintMultiple(quantity)}
                   variant="contained"
-                >
+                > */}
                 {isSoldOut ? (
                   "SOLD OUT"
                   ) : (
