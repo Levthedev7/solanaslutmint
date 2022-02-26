@@ -64,7 +64,7 @@ export interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const [quantity, setQuantity] = useState(0);
-  const basePrice = 0.9;
+  const basePrice = 1;
   const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
@@ -344,6 +344,7 @@ const Home = (props: HomeProps) => {
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
             <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                 Mint Your Dream Pimp
             </h1>
@@ -408,6 +409,7 @@ const Home = (props: HomeProps) => {
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
               <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                   Mint Your Dream Pimp
               </h1>
@@ -449,7 +451,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              {/* <MintButton
+              <MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -472,7 +474,7 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton> */}
+              </MintButton>
 
                   {/* <Countdown
                     date={startDate}
