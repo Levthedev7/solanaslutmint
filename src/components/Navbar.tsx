@@ -16,7 +16,7 @@ interface Props {
 }
 const Completionist = () => (
     <span style={{ color: "#2D2D2D", fontWeight: 700, fontSize: "1.5rem" }}>
-        Mint now LIVE
+        SOLSLUTS & SOLPIMPS SOLD OUT
     </span>
 );
 const renderer: FC<Props> = ({
@@ -105,7 +105,7 @@ const Navbar = () => {
                             to="/mint"
                             className="font-body font-semibold"
                         >
-                            Mint Now
+                            SOLD OUT
                         </MintButton>
                     </div>
                     <div className="flex  justify-center items-center ">

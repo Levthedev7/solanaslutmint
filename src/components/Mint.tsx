@@ -67,7 +67,7 @@ const Home = (props: HomeProps) => {
   const basePrice = 1;
   const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
-  const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
+  const [isSoldOut, setIsSoldOut] = useState(true); // true when items remaining is zero
   const [isMinting, setIsMinting] = useState(false); // true when user got to press MINT
 
 //whitelist
@@ -344,7 +344,7 @@ const Home = (props: HomeProps) => {
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: SOLD</h1>
             <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                 Mint Your Dream Pimp
             </h1>
@@ -409,7 +409,7 @@ const Home = (props: HomeProps) => {
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: SOLD OUT</h1>
               <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                   Mint Your Dream Pimp
               </h1>
@@ -471,7 +471,7 @@ const Home = (props: HomeProps) => {
                   isMinting ? (
                     <CircularProgress />
                     ) : (
-                      "MINT"
+                      "SOLD OUT"
                       )
                       ) }
               </MintButton>
