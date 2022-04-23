@@ -105,7 +105,7 @@ const Navbar = () => {
                             to="/mint"
                             className="font-body font-semibold"
                         >
-                            Mint Now
+                            SSS Pass Mint Now
                         </MintButton>
                     </div>
                     <div className="flex  justify-center items-center ">
@@ -115,7 +115,7 @@ const Navbar = () => {
                 />
             </div>
                     <div className="flex  justify-center items-center ">
-                    <h1 className="font-semibold text-2xl ">PRE-SALE: SOLD OUT</h1>
+                    {/* <h1 className="font-semibold text-2xl ">PRE-SALE: SOLD OUT</h1> */}
             </div>
 
                     {/* secondary nav */}

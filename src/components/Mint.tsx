@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Countdown from "react-countdown";
 import { Button, CircularProgress, Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import girl from "../assets/girls/pimp_me_out.gif";
+import girl from "../assets/girls/mintpass.gif";
 import {ConnectButton,   MintPageButton } from "./Buttons/Buttons";
 import * as anchor from "@project-serum/anchor";
 import tw from "twin.macro";
@@ -64,7 +64,7 @@ export interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const [quantity, setQuantity] = useState(0);
-  const basePrice = 1;
+  const basePrice = 2.5;
   const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
@@ -254,7 +254,7 @@ const Home = (props: HomeProps) => {
 
     setAlertState({
       open: true,
-      message: 'Please confirm '+quantity+' Pimp transaction(s) to mint!',
+      message: 'Please confirm '+quantity+' SSS Pass transaction(s) to mint!',
       severity: 'info',
     });
     for (let i = 0; i < quantity; i++) {
@@ -343,10 +343,10 @@ const Home = (props: HomeProps) => {
           <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center min-h-screen">
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: LIVE</h1>
+            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1> */}
             <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
-                Mint Your Dream Pimp
+                Mint Your SSS Pass
             </h1>
             <h1 className="font-semibold text-2xl mt-6 mb-4">
                 Mint Quantity
@@ -408,10 +408,10 @@ const Home = (props: HomeProps) => {
          
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1>
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: LIVE</h1>
+            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1> */}
               <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
-                  Mint Your Dream Pimp
+                  Mint Your SSS Pass
               </h1>
               <h1 className="font-semibold text-2xl mt-8 mb-4">
                   Mint Quantity
@@ -451,7 +451,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              <MintButton
+              {/* <MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -474,7 +474,7 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton>
+              </MintButton> */}
 
                   {/* <Countdown
                     date={startDate}
