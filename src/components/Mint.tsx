@@ -451,7 +451,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              {/* <MintButton
+              <MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -474,7 +474,7 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton> */}
+              </MintButton>
 
                   {/* <Countdown
                     date={startDate}
