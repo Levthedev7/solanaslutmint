@@ -64,7 +64,7 @@ export interface HomeProps {
 
 const Home = (props: HomeProps) => {
   const [quantity, setQuantity] = useState(0);
-  const basePrice = 2.5;
+  const basePrice = 3;
   const [balance, setBalance] = useState<number>();
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
