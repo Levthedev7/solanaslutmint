@@ -85,7 +85,8 @@ const Home = (props: HomeProps) => {
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [dispAddress, setDispAddress] = useState('');
 
-  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 1, 21,22, 0, 0, 0)).getTime());
+  // const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1,13, 0, 0, 0)).getTime());
+  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1, 10, 44, 0, 0)).getTime());
 
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
 
@@ -206,7 +207,8 @@ const Home = (props: HomeProps) => {
           active = false;
         }
 
-        setIsActive((cndy.state.isActive = active));
+        cndy.state.isActive = active;
+        setIsActive(cndy.state.isActive && isActive);        
         setIsPresale((cndy.state.isPresale = presale));
         setCandyMachine(cndy);
       } catch (e) {
@@ -220,9 +222,18 @@ const Home = (props: HomeProps) => {
   useEffect(() => {
     (async () => {
       if (anchorWallet) {
-        const balance = await props.connection.getBalance(anchorWallet.publicKey);
-        setBalance(balance / LAMPORTS_PER_SOL);
         setDispAddress(shortenAddress(anchorWallet.publicKey.toString()));
+        try {
+          const balance = await props.connection.getBalance(anchorWallet.publicKey);
+          setBalance(balance / LAMPORTS_PER_SOL);
+        } catch (error: any) {
+          setAlertState({
+            open: true,
+            message: error.message,
+            severity: 'error',
+          });
+        }
+        
       }
     })();
   }, [wallet, props.connection]);
@@ -344,7 +355,16 @@ const Home = (props: HomeProps) => {
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1> */}
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: {
+              isActive ? ('LIVE') : (<Countdown
+                date={startDate}
+                onMount={({ completed }) => completed && setIsActive(true)}
+                onComplete={() => setIsActive(true)}
+                renderer={renderCounter}
+            />)
+            }      
+            
+            </h1>
             <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                 Mint Your SSS Pass
             </h1>
@@ -409,7 +429,16 @@ const Home = (props: HomeProps) => {
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
-            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: LIVE</h1> */}
+            <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: {
+              isActive ? ('LIVE') : (<Countdown
+                date={startDate}
+                onMount={({ completed }) => completed && setIsActive(true)}
+                onComplete={() => setIsActive(true)}
+                renderer={renderCounter}
+            />)
+            }      
+            
+            </h1>
               <h1 className="mt-5 text-center text-wrap lg:text-left font-bold text-3xl md:text-4xl">
                   Mint Your SSS Pass
               </h1>
@@ -451,7 +480,7 @@ const Home = (props: HomeProps) => {
               <h2 className="font-bold text-2xl mt-6">
                   ~ {(quantity * basePrice)} SOL
               </h2>
-              {/* <MintButton
+              { isActive && (<MintButton
                   style={{
                     color: "#2d2d2d",
                     backgroundColor: "white",
@@ -474,7 +503,8 @@ const Home = (props: HomeProps) => {
                       "MINT"
                       )
                       ) }
-              </MintButton> */}
+                </MintButton>)
+              }
 
                   {/* <Countdown
                     date={startDate}
