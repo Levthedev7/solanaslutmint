@@ -85,8 +85,8 @@ const Home = (props: HomeProps) => {
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [dispAddress, setDispAddress] = useState('');
 
-  // const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1,13, 0, 0, 0)).getTime());
-  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1, 10, 44, 0, 0)).getTime());
+  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1,13, 0, 0, 0)).getTime());
+  //const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1, 10, 44, 0, 0)).getTime());
 
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
 
