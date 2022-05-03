@@ -121,7 +121,7 @@ const App = () => {
 
   const Completionist = () => (
       <span style={{ color: "#2D2D2D", fontWeight: 700, fontSize: "1.5rem" }}>
-         SSS Pass Mint Live!
+         {/* SSS Pass Mint Live! */}
       </span>
   );
 
