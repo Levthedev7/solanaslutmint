@@ -85,7 +85,7 @@ const Home = (props: HomeProps) => {
   const [isUserMinting, setIsUserMinting] = useState(false);
   const [dispAddress, setDispAddress] = useState('');
 
-  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1,13, 0, 0, 0)).getTime());
+  const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 10, 10, 0, 0, 0)).getTime());
   //const [startDate, setStartDate] = useState(new Date(Date.UTC(2022, 4, 1, 10, 44, 0, 0)).getTime());
 
   const [candyMachine, setCandyMachine] = useState<CandyMachineAccount>();
@@ -354,7 +354,7 @@ const Home = (props: HomeProps) => {
           <div className="flex flex-wrap flex-col lg:flex-row items-center justify-center min-h-screen">
           <MintCard data-aos="flip-left">
             {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
+            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: {
               isActive ? ('LIVE') : (<Countdown
                 date={startDate}
@@ -428,7 +428,7 @@ const Home = (props: HomeProps) => {
          
           <h1 className="font-semibold text-2xl mt-5 mb-2">Connected: { dispAddress }</h1>
           {/* <h1 className="font-semibold text-2xl mt-5 mb-2">EARLY BIRD: SOLD OUT</h1> */}
-            <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1>
+            {/* <h1 className="font-semibold text-2xl mt-2 mb-6">PRE-SALE: SOLD OUT</h1> */}
             <h1 className="font-semibold text-2xl mt-2 mb-6">PUBLIC SALE: {
               isActive ? ('LIVE') : (<Countdown
                 date={startDate}
