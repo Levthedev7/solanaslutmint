@@ -6,7 +6,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 import { MainButton } from "../components/Buttons/Buttons";
-import girl1 from "../assets/girls/homegirls.gif";
+// import girl1 from "../assets/girls/homegirls.gif";
 
 const Container = styled.div`
     ${tw`
@@ -86,7 +86,7 @@ const Home = () => {
                         <h1>Mint</h1>
                     </MainButton>
                 </Container>
-                <Image src={girl1} data-aos="slide-left" />
+                {/* <Image src={girl1} data-aos="slide-left" /> */}
             </div>
         </>
     );
